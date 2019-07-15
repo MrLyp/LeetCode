@@ -7,9 +7,9 @@ import java.util.List;
 public class So216 {
 
     public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         boolean[] visited = new boolean[10];
-        dfs(result, new ArrayList<>(), visited, k, n);
+        dfs(result, new ArrayList<Integer>(), visited, k, n);
         return result;
     }
 
