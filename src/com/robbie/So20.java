@@ -17,24 +17,16 @@ public class So20 {
         stack.push(s.charAt(0));
         for (int i = 1; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (stack.isEmpty()) {
-                if (map.containsKey(c))
-                    stack.push(c);
-                else
-                    return false;
+            if (map.containsKey(c)) {
+                stack.push(c);
             } else {
-                char top = stack.peek();
-                if (map.containsKey(top)) {
-                    if (map.containsKey(c)) {
-                        stack.push(c);
-                        continue;
-                    }
-                    if (map.get(top) == c)
-                        stack.pop();
-                    else
-                        return false;
+                char top = '0';
+                if (!stack.isEmpty())
+                    top = stack.peek();
+                if (map.get(top) != null && c == map.get(top)) {
+                    stack.pop();
                 } else {
-                    stack.push(c);
+                    return false;
                 }
             }
         }
@@ -48,5 +40,6 @@ public class So20 {
         System.out.println(so.isValid("(]"));
         System.out.println(so.isValid("([)]"));
         System.out.println(so.isValid("{[]}"));
+        System.out.println(so.isValid("[])"));
     }
 }
