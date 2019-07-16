@@ -13,7 +13,7 @@ public class So1 {
         }
         int[] result = new int[2];
         for (int i = 0; i < nums.length; i++) {
-            int index = map.getOrDefault(target - nums[i], -1);
+            int index = map.get(target - nums[i]);
             if (index > 0 && index != i) {
                 result[0] = i;
                 result[1] = index;
