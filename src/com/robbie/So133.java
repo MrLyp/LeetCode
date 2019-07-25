@@ -34,7 +34,7 @@ public class So133 {
         HashMap<Node, Node> map = new HashMap<>();
         List<Node> nodes = new ArrayList<>(nodeSet);
         for (int i = 0; i < nodes.size(); i++) {
-            map.put(nodes.get(i), new Node(nodes.get(i).val, new ArrayList<>()));
+            map.put(nodes.get(i), new Node(nodes.get(i).val, new ArrayList<Node>()));
         }
         for (int i = 0; i < nodes.size(); i++) {
             Node n = nodes.get(i);
