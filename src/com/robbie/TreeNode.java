@@ -13,6 +13,16 @@ public class TreeNode {
         val = x;
     }
 
+    public static void print(TreeNode root) {
+        if (root == null) {
+            System.out.print("null,");
+            return;
+        }
+        System.out.print(root.val + ",");
+        print(root.left);
+        print(root.right);
+    }
+
     public static TreeNode stringToTreeNode(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
@@ -27,7 +37,7 @@ public class TreeNode {
         nodeQueue.add(root);
 
         int index = 1;
-        while(!nodeQueue.isEmpty()) {
+        while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.remove();
 
             if (index == parts.length) {
