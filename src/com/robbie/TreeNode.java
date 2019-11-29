@@ -25,7 +25,7 @@ public class TreeNode {
 
     public static TreeNode stringToTreeNode(String input) {
         input = input.trim();
-        input = input.substring(1, input.length() - 1);
+//        input = input.substring(1, input.length() - 1);
         if (input.length() == 0) {
             return null;
         }
